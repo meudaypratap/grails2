@@ -1,0 +1,7 @@
+.classpath
+.project
+.settings/
+.idea/
+Grails2-grailsPlugins.iml
+Grails2.iml
+target/
