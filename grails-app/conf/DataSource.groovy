@@ -2,7 +2,7 @@ dataSource {
     pooled = true
     driverClassName = "com.mysql.jdbc.Driver"
     dialect = org.hibernate.dialect.MySQL5InnoDBDialect // must be set for transactions to work!
-    dbCreate = "update"
+    dbCreate = "create-drop"
     username = "root"
     password = "igdefault"
     properties {

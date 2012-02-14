@@ -1,5 +1,7 @@
 package grails2
 
+import grails.gorm.DetachedCriteria
+
 class BookController {
     static layout = 'book'
     def scaffold = Book
@@ -62,5 +64,28 @@ class BookController {
         }
         int total = query.deleteAll()
         render "Objects deleted ${total}"
+    }
+
+    def detachedCriteria() {
+        def criteria = new DetachedCriteria(Book).build {
+            between('price', 20f, 40f)
+        }
+        render criteria.list()
+//        render criteria.list(max: 5)
+//        render criteria.findAll()
+//        render criteria.findAllByAuthor(Author.get(3))
+//        render criteria.list {
+//            ilike("name", "Book_2%")
+//        }
+    }
+
+    def detachedProjections() {
+        def criteria = new DetachedCriteria(Book).build {
+            projections {
+                avg('price')
+            }
+            between('price', 20f, 40f)
+        }
+        render criteria.find()
     }
 }
