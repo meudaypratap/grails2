@@ -39,6 +39,14 @@ class BookController {
         render query.list()
     }
 
+    def projection() {
+        def query = Book.where {
+        }.projections {
+            avg('price')
+        }
+        render query.find()
+    }
+
     def projections() {
         def query = Book.where {
             price > avg(price)
@@ -91,4 +99,62 @@ class BookController {
         }
         render criteria.find()
     }
+
+    def subQuery() {
+        def results = Book.withCriteria {
+            projections {
+                property('price')
+            }
+            gt "price", {
+                projections {
+                    avg "price"
+                }
+            }
+            order "name"
+        }
+        render results
+
+        /*def results = new DetachedCriteria(Book).build {
+            projections {
+                property('price')
+            }
+            gt "price", {
+                projections {
+                    avg "price"
+                }
+            }
+            order "name"
+        }
+        render results.list()*/
+    }
+
+    def getAll() {
+        def results = Book.withCriteria {
+            gtAll "price", {
+                projections {
+                    property "price"
+                }
+                between 'price', 20f, 80f
+            }
+
+        }
+        render results.price
+    }
+
+    def detachUpdate() {
+        def criteria = new DetachedCriteria(Book).build {
+            between('price', 20f, 40f)
+        }
+        int total = criteria.updateAll(name: "Test")
+        render "Updated -: ${total}"
+    }
+
+    def detachDelete() {
+        def criteria = new DetachedCriteria(Book).build {
+            between('price', 20f, 40f)
+        }
+        int total = criteria.deleteAll()
+        render "Updated -: ${total}"
+    }
+
 }
