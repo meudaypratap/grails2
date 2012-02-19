@@ -30,6 +30,8 @@
 
             <g:sortableColumn property="price" title="${message(code: 'book.price.label', default: 'Price')}"/>
 
+            <g:sortableColumn property="date" title="${message(code: 'book.price.label', default: 'Date')}"/>
+
             <th><g:message code="book.author.label" default="Author"/></th>
 
         </tr>
@@ -42,6 +44,7 @@
 
                 <td>${fieldValue(bean: book, field: "price")}</td>
 
+                <td><g:formatDate date="${book.dateCreated}"/></td>
                 <td>${fieldValue(bean: book, field: "author")}</td>
 
             </tr>

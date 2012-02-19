@@ -12,7 +12,7 @@ class BootStrap {
 
         Author.list().each {Author author ->
             (1..5).each {
-                Book book = new Book(name: "Book_${(author.id * 10) + it}", price: ((author.id * 10) + it))
+                Book book = new Book(name: "Book_${(author.id * 10) + it}", price: ((author.id * 10) + it), dateCreated: new Date() - it)
                 author.addToBooks(book)
                 author.save()
             }
