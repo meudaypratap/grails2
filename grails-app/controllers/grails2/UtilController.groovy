@@ -37,7 +37,7 @@ class UtilController {
         def query = Author.where {
             month(dob) >= 5 && month(dob) <= 10
         }
-        render query.list()
+        render(view: '/author/list', model: [authorList: query.list()])
     }
 
     def projection() {
@@ -45,18 +45,18 @@ class UtilController {
         }.projections {
             avg('price')
         }
-        render query.find()
+        render(view: 'result', model: [average: query.find()])
     }
 
     def projections() {
         def query = Book.where {
             price > avg(price)
         }.property('id').property('price').sort('price', 'desc')
-        def result
+        List results
         LogSql.execute {
-            result = query.list()
+            results = query.list()
         }
-        render result
+        render(view: 'result', model: [results: results])
     }
 
     def updateAll() {
