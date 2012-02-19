@@ -43,6 +43,13 @@ class UtilController {
         render(view: '/author/list', model: [authorList: query.list()])
     }
 
+    def size() {
+        def query = Author.where {
+            books.size() == 5
+        }
+        render(view: '/author/list', model: [authorList: query.list()])
+    }
+
     def month() {
         def query = Author.where {
             month(dob) >= 5 && month(dob) <= 10
