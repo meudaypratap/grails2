@@ -4,22 +4,32 @@ import grails.gorm.DetachedCriteria
 
 class UtilController {
 
+    def index() {}
+
     def where() {
         def query = Book.where {
             price > 30f || author == Author.get(2)
         }
-        List books = query.list([max: 7,sort: 'id'])
+        List books = query.list([max: 7, sort: 'id'])
 //        List books = query.findAllByDateCreatedGreaterThan(new Date() - 3)
 //        List books = query.find()
 //        List books = query.findAll()
         render(view: '/book/list', model: [bookList: books])
     }
 
-    def index() {}
-
     def range() {
         def query = Book.where {
             price in (20f..30f)
+        }
+        render(view: '/book/list', model: [bookList: query.list()])
+    }
+
+    def queryComposition() {
+        def priceQuery = Book.where {
+            price < 25f
+        }
+        def query = priceQuery.where {
+            author == Author.get(2l)
         }
         render(view: '/book/list', model: [bookList: query.list()])
     }
