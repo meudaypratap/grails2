@@ -45,7 +45,7 @@ class UtilController {
         }.projections {
             avg('price')
         }
-        render(view: 'result', model: [average: query.find()])
+        render(view: 'result', model: [result: "Average -: ${query.find()}"])
     }
 
     def projections() {
@@ -64,7 +64,7 @@ class UtilController {
             price in (20f..30f)
         }
         int total = query.updateAll(name: "Uday")
-        render "Objects updated ${total}"
+        render(view: 'result', model: [result: "Objects updated ${total}"])
     }
 
     def deleteAll() {
@@ -72,23 +72,24 @@ class UtilController {
             id in [1l, 2l, 3l, 4l, 5l]
         }
         int total = query.deleteAll()
-        render "Objects deleted ${total}"
+        render(view: 'result', model: [result: "Objects deleted ${total}"])
     }
 
     def detachedCriteria() {
         def criteria = new DetachedCriteria(Book).build {
             between('price', 20f, 40f)
         }
-        render criteria.list()
-//        render criteria.list(max: 5)
-//        render criteria.findAll()
-//        render criteria.findAllByAuthor(Author.get(3))
-//        render criteria.list {
+        List books = criteria.list()
+//        List books =  criteria.list(max: 5)
+//        List books =  criteria.findAll()
+//        List books =  criteria.findAllByAuthor(Author.get(3))
+//        List books =  criteria.list {
 //            ilike("name", "Book_2%")
 //        }
 //        criteria.each {
 //            render it.toString() +"<br/>"
 //        }
+        render(view: '/book/list', model: [bookList: books])
     }
 
     def detachedProjections() {
@@ -98,12 +99,13 @@ class UtilController {
             }
             between('price', 20f, 40f)
         }
-        render criteria.find()
+        render(view: 'result', model: [result: "Average -: ${criteria.find()}"])
     }
 
     def subQuery() {
         def results = Book.withCriteria {
             projections {
+                property('id')
                 property('price')
             }
             gt "price", {
@@ -111,12 +113,13 @@ class UtilController {
                     avg "price"
                 }
             }
-            order "name"
+            order "price"
         }
-        render results
+        render(view: 'result', model: [results: results])
 
         /*def results = new DetachedCriteria(Book).build {
             projections {
+                property('id')
                 property('price')
             }
             gt "price", {
@@ -124,13 +127,13 @@ class UtilController {
                     avg "price"
                 }
             }
-            order "name"
+            order "price"
         }
-        render results.list()*/
+        render(view: 'result', model: [results: results])*/
     }
 
     def getAll() {
-        def results = Book.withCriteria {
+        def books = Book.withCriteria {
             gtAll "price", {
                 projections {
                     property "price"
@@ -139,7 +142,7 @@ class UtilController {
             }
 
         }
-        render results.price
+        render(view: '/book/list', model: [bookList: books])
     }
 
     def detachUpdate() {
@@ -147,7 +150,7 @@ class UtilController {
             between('price', 20f, 40f)
         }
         int total = criteria.updateAll(name: "Test")
-        render "Updated -: ${total}"
+        render(view: 'result', model: [result: "Objects updated ${total}"])
     }
 
     def detachDelete() {
@@ -155,6 +158,6 @@ class UtilController {
             between('price', 20f, 40f)
         }
         int total = criteria.deleteAll()
-        render "Updated -: ${total}"
+        render(view: 'result', model: [result: "Objects deleted ${total}"])
     }
 }

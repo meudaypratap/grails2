@@ -50,7 +50,7 @@
             <td><g:link controller="util" action="detachedProjections">Example -10 (Detached Projection)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="util" action="subQuery">Example -11 (Detached Projections)</g:link></td>
+            <td><g:link controller="util" action="subQuery">Example -11 (Sub Query)</g:link></td>
         </tr>
         <tr>
             <td><g:link controller="util" action="getAll">Example -12 (Get All)</g:link></td>

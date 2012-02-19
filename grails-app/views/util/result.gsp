@@ -19,13 +19,15 @@
 <div id="list-book" class="content scaffold-list" role="main">
     <table>
         <thead>
-        <th>id</th>
-        <th>price</th>
+        <tr>
+            <th>Id</th>
+            <th>Price</th>
+        </tr>
         </thead>
         <tbody>
-        <g:if test="${average}">
+        <g:if test="${result}">
             <tr>
-                <td colspan="2">Average -: ${average}</td>
+                <td colspan="2">${result}</td>
             </tr>
         </g:if>
         <g:if test="${results}">
