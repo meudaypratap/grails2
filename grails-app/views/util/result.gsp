@@ -11,8 +11,9 @@
 
 <div class="nav" role="navigation">
     <ul>
-        <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-        <li><a class="home" href="${createLink(action: 'index')}">Util</a></li>
+        <li><a class="home" href="${createLink(action: 'index')}">Examples</a></li>
+        <li><a class="home" href="${createLink(controller: 'book')}">Book</a></li>
+        <li><a class="home" href="${createLink(controller: 'author')}">Author</a></li>
     </ul>
 </div>
 
