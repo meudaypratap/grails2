@@ -48,6 +48,11 @@
         </g:each>
         </tbody>
     </table>
+    <g:if test="${bookTotal>10}">
+        <div class="pagination">
+            <g:paginate total="${bookTotal}"/>
+        </div>
+    </g:if>
 </div>
 </body>
 </html>

@@ -30,7 +30,7 @@ class UtilController {
                 (price >= 20f && price <= 35f)
             }
         }
-        render query.list()
+        render(view: '/author/list', model: [authors: query.list()])
     }
 
     def month() {
