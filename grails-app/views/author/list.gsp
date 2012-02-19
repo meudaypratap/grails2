@@ -33,7 +33,7 @@
         </tr>
         </thead>
         <tbody>
-        <g:each in="${authors}" status="i" var="author">
+        <g:each in="${authorList}" status="i" var="author">
             <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
                 <td><g:link action="show" id="${author.id}">${fieldValue(bean: author, field: "name")}</g:link></td>

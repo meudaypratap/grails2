@@ -35,7 +35,7 @@
         </tr>
         </thead>
         <tbody>
-        <g:each in="${books}" status="i" var="book">
+        <g:each in="${bookList}" status="i" var="book">
             <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
                 <td><g:link action="show" id="${book.id}">${fieldValue(bean: book, field: "name")}</g:link></td>

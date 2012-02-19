@@ -14,14 +14,14 @@ class UtilController {
 //        List books = query.list([max: 5,sort: 'id'])
 //        List books = query.find()
 //        List books = query.findAll()
-        render(view: '/book/list', model: [books: books])
+        render(view: '/book/list', model: [bookList: books])
     }
 
     def range() {
         def query = Book.where {
             price in (20f..30f)
         }
-        render(view: '/book/list', model: [books: query.list()])
+        render(view: '/book/list', model: [bookList: query.list()])
     }
 
     def association() {
@@ -30,7 +30,7 @@ class UtilController {
                 (price >= 20f && price <= 35f)
             }
         }
-        render(view: '/author/list', model: [authors: query.list()])
+        render(view: '/author/list', model: [authorList: query.list()])
     }
 
     def month() {
