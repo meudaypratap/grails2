@@ -2,7 +2,7 @@ package grails2
 
 import grails.gorm.DetachedCriteria
 
-class UtilController {
+class ExampleController {
 
     def index() {}
 
