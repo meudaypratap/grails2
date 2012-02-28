@@ -8,7 +8,20 @@ class ExampleController {
 
     def where() {
         def query = Book.where {
-            price > 30f || author == Author.get(2)
+            price < 30f
+            author == Author.get(2)
+        }
+        List books = query.list([max: 7, sort: 'id'])
+//        List books = query.findAllByDateCreatedGreaterThan(new Date() - 3)
+//        List books = query.find()
+//        List books = query.findAll()
+        render(view: '/book/list', model: [bookList: books])
+    }
+
+    def whereAny() {
+        def query = Book.whereAny {
+            price < 30f
+            author == Author.get(2)
         }
         List books = query.list([max: 7, sort: 'id'])
 //        List books = query.findAllByDateCreatedGreaterThan(new Date() - 3)

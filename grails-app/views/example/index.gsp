@@ -22,52 +22,56 @@
 
         <tbody>
         <tr>
-            <td><g:link controller="example" action="where">Example -1 (Where)</g:link></td>
+            <td><g:link controller="example" action="where">Example - 1 (Where)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="range">Example -2 (Range)</g:link></td>
+            <td><g:link controller="example" action="whereAny">Example - 2 (WhereAny)</g:link></td>
+        </tr>
+
+        <tr>
+            <td><g:link controller="example" action="range">Example - 3 (Range)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="queryComposition">Example -3 (Query Composition)</g:link></td>
+            <td><g:link controller="example" action="queryComposition">Example - 4 (Query Composition)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="association">Example -4 (Association)</g:link></td>
+            <td><g:link controller="example" action="association">Example - 5 (Association)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="size">Example -5 (Size)</g:link></td>
+            <td><g:link controller="example" action="size">Example - 6 (Size)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="month">Example -6 (Month)</g:link></td>
+            <td><g:link controller="example" action="month">Example - 7 (Month)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="projection">Example -7 (Projection)</g:link></td>
+            <td><g:link controller="example" action="projection">Example - 8 (Projection)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="projections">Example -8 (Projections)</g:link></td>
+            <td><g:link controller="example" action="projections">Example - 9 (Projections)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="updateAll">Example -9 (Update All)</g:link></td>
+            <td><g:link controller="example" action="updateAll">Example - 10 (Update All)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="deleteAll">Example -10 (Delete All)</g:link></td>
+            <td><g:link controller="example" action="deleteAll">Example - 11 (Delete All)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="detachedCriteria">Example -11 (Detached Criteria)</g:link></td>
+            <td><g:link controller="example" action="detachedCriteria">Example - 12 (Detached Criteria)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="detachedProjections">Example -12 (Detached Projection)</g:link></td>
+            <td><g:link controller="example" action="detachedProjections">Example - 13 (Detached Projection)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="subQuery">Example -13 (Sub Query)</g:link></td>
+            <td><g:link controller="example" action="subQuery">Example - 14 (Sub Query)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="getAll">Example -14 (Get All)</g:link></td>
+            <td><g:link controller="example" action="getAll">Example - 15 (Get All)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="detachUpdate">Example -15 (Detach Update)</g:link></td>
+            <td><g:link controller="example" action="detachUpdate">Example - 16 (Detach Update)</g:link></td>
         </tr>
         <tr>
-            <td><g:link controller="example" action="detachDelete">Example -16 (Detach Delete)</g:link></td>
+            <td><g:link controller="example" action="detachDelete">Example - 17 (Detach Delete)</g:link></td>
         </tr>
 
         </tbody>
