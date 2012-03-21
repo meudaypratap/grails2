@@ -145,7 +145,6 @@ class ExampleController {
             }
             order "price"
         }
-        render(view: 'result', model: [results: results])
 
         /*def results = new DetachedCriteria(Book).build {
             projections {
@@ -158,8 +157,8 @@ class ExampleController {
                 }
             }
             order "price"
-        }
-        render(view: 'result', model: [results: results])*/
+        }    */
+        render(view: 'result', model: [results: results])
     }
 
     def getAll() {
