@@ -33,7 +33,7 @@
         </g:if>
         <g:if test="${results}">
             <g:each in="${results}" var="result" status="index">
-                <tr>
+                <tr class="${(index % 2)? 'even' : 'odd'}">
                     <td>${result[0]}</td>
                     <td>${result[1]}</td>
                 </tr>
