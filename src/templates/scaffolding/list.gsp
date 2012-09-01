@@ -53,11 +53,9 @@
 				</g:each>
 				</tbody>
 			</table>
-            <g:if test="\${${propertyName}Total>10}">
-                <div class="pagination">
-                    <g:paginate total="\${${propertyName}Total}"/>
-                </div>
-            </g:if>
-        </div>
+			<div class="pagination">
+				<g:paginate total="\${${propertyName}Total}" />
+			</div>
+		</div>
 	</body>
 </html>
