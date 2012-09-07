@@ -1,11 +1,12 @@
 import grails2.Author
 import grails2.Book
+import grails2.TextBlog
 
 class BootStrap {
 
     def init = { servletContext ->
 
-        (1..10).each {
+       (1..10).each {
             Author author = new Author(name: "Author_${it}", dob: (new Date() - (it * 30)))
             author.save()
         }
@@ -18,6 +19,9 @@ class BootStrap {
             }
 
         }
+
+       new TextBlog(authorName: 'test',textContent: 'This is my blog').save()
+       println TextBlog.list()
     }
     def destroy = {
     }
