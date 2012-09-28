@@ -189,4 +189,8 @@ class ExampleController {
         int total = criteria.deleteAll()
         render(view: 'result', model: [result: "Objects deleted ${total}"])
     }
+
+    def appIndex = {
+        render(view: '/index')
+    }
 }

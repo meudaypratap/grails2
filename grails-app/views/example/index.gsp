@@ -7,20 +7,17 @@
 </head>
 
 <body>
-<a href="#list-book" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-
-<div class="nav" role="navigation">
-    <ul>
-        <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-        <li><a class="list" href="${createLink(controller: 'book')}">Book</a></li>
-        <li><a class="list" href="${createLink(controller: 'author')}">Author</a></li>
-    </ul>
+<div class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="#"><g:message code="default.list.label" args="[entityName]"/></a>
+        <ul class="nav pull-right">
+            <li><g:link action="create"><g:message code="default.new.label" args="[entityName]"/></g:link></li>
+        </ul>
+    </div>
 </div>
+<table class="table table-bordered table-striped table-hover">
 
-<div id="list-book" class="content scaffold-list" role="main">
-    <table>
-
-        <tbody>
+    <tbody>
         <tr>
             <td><g:link controller="example" action="where">Example - 1 (Where)</g:link></td>
         </tr>
