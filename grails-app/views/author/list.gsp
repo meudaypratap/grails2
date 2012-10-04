@@ -11,7 +11,7 @@
     <div class="navbar-inner">
         <a class="brand" href="#"><g:message code="default.list.label" args="[entityName]"/></a>
         <ul class="nav pull-right">
-            <li><g:link action="create"><g:message code="default.new.label" args="[entityName]"/></g:link></li>
+            <li><g:link action="create"><i class="icon-plus-sign"></i>&nbsp;<g:message code="default.new.label" args="[entityName]"/></g:link></li>
         </ul>
     </div>
 </div>
@@ -38,7 +38,7 @@
     </tbody>
 </table>
 <g:if test="${authorTotal > 10}">
-    <div class="pagination">
+    <div class="pagination pagination-right">
         <g:paginate total="${authorTotal}"/>
     </div>
 </g:if>

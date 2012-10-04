@@ -29,13 +29,12 @@
                 <span class="icon-bar"></span>
             </a>
             <a class="brand" href="${createLink(uri:'/')}">${appName}</a>
-
             <div class="nav-collapse collapse">
                 %{-- <p class="navbar-text pull-right">
                     Logged in as <a href="#" class="navbar-link">${session.email}</a>
                 </p>--}%
                 <ul class="nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="${createLink(uri:'/')}">Home</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#controllers">
                             Controllers

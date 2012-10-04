@@ -2,19 +2,12 @@
 <!doctype html>
 <html>
 <head>
+    <meta name="layout" content="main">
     <g:set var="entityName" value="${message(code: 'book.label', default: 'Book')}"/>
     <title><g:message code="default.list.label" args="[entityName]"/></title>
 </head>
 
 <body>
-<div class="navbar">
-    <div class="navbar-inner">
-        <a class="brand" href="#"><g:message code="default.list.label" args="[entityName]"/></a>
-        <ul class="nav pull-right">
-            <li><g:link action="create"><g:message code="default.new.label" args="[entityName]"/></g:link></li>
-        </ul>
-    </div>
-</div>
 <table class="table table-bordered table-striped table-hover">
     <thead>
     <tr>

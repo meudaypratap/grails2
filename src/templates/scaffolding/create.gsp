@@ -21,7 +21,7 @@
         <div class="navbar-inner">
             <a class="brand" href="#"><g:message code="default.create.label" args="[entityName]" /></a>
             <ul class="nav pull-right">
-                <li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                <li><g:link class="list" action="list"><i class="icon-list"></i>&nbsp;<g:message code="default.list.label" args="[entityName]" /></g:link></li>
             </ul>
         </div>
     </div>
@@ -33,7 +33,6 @@
         </g:if>
 	    <g:render template="form"/>
 		<div class="control-group">
-            <div class="controls">
                 <g:if test="\${${propertyName}?.id}">
                     <g:actionSubmit class="btn btn-info" action="save" value="\${message(code: 'default.button.update.label', default: 'Update')}" />
                     <g:actionSubmit class="btn btn-danger" action="delete" value="\${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate=""
@@ -41,7 +40,6 @@
                 </g:if><g:else>
                     <g:submitButton name="create" class="btn btn-info" value="\${message(code: 'default.button.create.label', default: 'Create')}" />
                 </g:else>
-            </div>
 	    </div>
 	</g:form>
 </body>
