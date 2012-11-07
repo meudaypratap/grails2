@@ -7,6 +7,8 @@ class Author {
     Long id
     String name
     Date dob
+    Boolean male
+    Boolean admin
 
     static hasMany = [books: Book]
     static constraints = {
