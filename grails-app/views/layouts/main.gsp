@@ -8,14 +8,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <g:set var="appName" value="${grails.util.GrailsNameUtils.getNaturalName(g.meta(name: 'app.name'))}" scope="page"/>
+    <g:set var="bootstrapTheme" value="${grailsApplication.config.bootstrap.theme ? '-' + grailsApplication.config.bootstrap.theme : ''}" scope="page"/>
     <title>${appName} | <g:layoutTitle/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="${resource(dir:'css',file:'custom.css')}"/>
-    <link rel="stylesheet" href="${resource(dir:'css',file:'bootstrap.css')}"/>
-    <link rel="stylesheet" href="${resource(dir:'css',file:'bootstrap-responsive.css')}"/>
-    <script type="text/javascript" src="${resource(dir:'js',file:'jquery-1.8.0.js')}"></script>
-    <script type="text/javascript" src="${resource(dir:'js',file:'bootstrap.js')}"></script>
-    <script type="text/javascript" src="${resource(dir:'js',file:'application.js')}"></script>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'custom.css')}"/>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap' + bootstrapTheme + '.css')}"/>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap-responsive.css')}"/>
+    <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.8.0.js')}"></script>
+    <script type="text/javascript" src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
+    <script type="text/javascript" src="${resource(dir: 'js', file: 'application.js')}"></script>
     <g:layoutHead/>
 </head>
 
@@ -28,13 +29,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="${createLink(uri:'/')}">${appName}</a>
+            <a class="brand" href="${createLink(uri: '/')}">${appName}</a>
+
             <div class="nav-collapse collapse">
                 %{-- <p class="navbar-text pull-right">
                     Logged in as <a href="#" class="navbar-link">${session.email}</a>
                 </p>--}%
                 <ul class="nav">
-                    <li class="active"><a href="${createLink(uri:'/')}">Home</a></li>
+                    <li class="active"><a href="${createLink(uri: '/')}">Home</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#controllers">
                             Controllers
@@ -72,6 +74,7 @@
                 </ul>
             </div>
         </div>
+
         <div class="span10">
             <g:if test="${flash.error}">
                 <div class="alert alert-error">

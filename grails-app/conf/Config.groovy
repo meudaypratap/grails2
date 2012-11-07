@@ -33,7 +33,7 @@ grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
 
 // What URL patterns should be processed by the resources plugin
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
-
+bootstrap.theme = "united"  //amelia,cerulean,united
 
 //grails.sitemesh.default.layout = 'book'
 // The default codec used to encode data with ${}
