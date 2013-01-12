@@ -15,7 +15,7 @@ dataSource {
         minEvictableIdleTimeMillis = (1000 * 60 * 5)
         timeBetweenEvictionRunsMillis = (1000 * 60 * 5)
     }
-    loggingSql = true
+    //loggingSql = true
 }
 hibernate {
     cache.use_second_level_cache = true
