@@ -1,6 +1,6 @@
-import grails2.Author
-import grails2.Book
-import grails2.TextBlog
+import com.grails2.Author;
+import com.grails2.Book;
+import com.grails2.TextBlog;
 
 class BootStrap {
 

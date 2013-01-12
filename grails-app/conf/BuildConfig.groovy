@@ -1,3 +1,15 @@
+codenarc{
+	ruleSetFiles = "file:grails-app/conf/CodeNarcRules.groovy"
+//    maxPriority2Violations = 1
+//    systemExitOnBuildException = true
+	reports = {
+	  HtmlReport('html') {                  // Report type is 'html'
+		outputFile = 'target/CodeNarcReport.html'
+		title = 'My Test Code Narc Report'
+	  }
+	}
+}
+
 grails.servlet.version = "2.5" // Change depending on target container compliance (2.5 or 3.0)
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
@@ -40,7 +52,7 @@ grails.project.dependency.resolution = {
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.7.1"
         runtime ":resources:1.1.5"
-
+		compile ":codenarc:0.18"
         build ":tomcat:$grailsVersion"
     }
 }

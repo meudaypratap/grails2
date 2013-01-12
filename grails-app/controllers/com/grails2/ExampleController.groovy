@@ -1,4 +1,4 @@
-package grails2
+package com.grails2
 
 import grails.gorm.DetachedCriteria
 
@@ -93,7 +93,7 @@ class ExampleController {
         def query = Book.where {
             price in (20f..30f)
         }
-        int total = query.updateAll(name: "Uday")
+        int total = query.updateAll(name: 'Uday')
         render(view: 'result', model: [result: "Objects updated ${total}"])
     }
 
@@ -138,12 +138,12 @@ class ExampleController {
                 property('id')
                 property('price')
             }
-            gt "price", {
+            gt 'price', {
                 projections {
-                    avg "price"
+                    avg 'price'
                 }
             }
-            order "price"
+            order 'price'
         }
 
         /*def results = new DetachedCriteria(Book).build {
@@ -151,21 +151,21 @@ class ExampleController {
                 property('id')
                 property('price')
             }
-            gt "price", {
+            gt 'price', {
                 projections {
-                    avg "price"
+                    avg 'price'
                 }
             }
-            order "price"
+            order 'price'
         }    */
         render(view: 'result', model: [results: results])
     }
 
     def getAll() {
         def books = Book.withCriteria {
-            gtAll "price", {
+            gtAll 'price', {
                 projections {
-                    property "price"
+                    property 'price'
                 }
                 between 'price', 20f, 80f
             }
@@ -178,7 +178,7 @@ class ExampleController {
         def criteria = new DetachedCriteria(Book).build {
             between('price', 20f, 40f)
         }
-        int total = criteria.updateAll(name: "Test")
+        int total = criteria.updateAll(name: 'Test')
         render(view: 'result', model: [result: "Objects updated ${total}"])
     }
 

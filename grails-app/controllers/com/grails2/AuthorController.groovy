@@ -1,4 +1,4 @@
-package grails2
+package com.grails2
 
 class AuthorController {
     static layout = 'main'

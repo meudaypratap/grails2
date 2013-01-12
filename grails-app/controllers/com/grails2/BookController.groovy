@@ -1,4 +1,4 @@
-package grails2
+package com.grails2
 
 class BookController {
     static layout = 'book'
