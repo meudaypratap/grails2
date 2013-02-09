@@ -6,7 +6,7 @@ import groovy.transform.ToString
 class Book {
     Long id
     String name
-    Float price
+	Float price
     Date dateCreated
 
     static belongsTo = [author: Author]

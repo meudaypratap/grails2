@@ -1,3 +1,6 @@
+import org.codehaus.groovy.grails.validation.ConstrainedProperty
+import com.grails2.constraints.*
+
 // locations to search for config files that get merged into the main config
 // config files can either be Java properties files or ConfigSlurper scripts
 
@@ -93,3 +96,5 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+ConstrainedProperty.registerNewConstraint(TimeConstraint.CONSTRAINT_NAME, TimeConstraint.class)
+

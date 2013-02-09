@@ -7,6 +7,7 @@ ruleset {
         '''
 
 	// rulesets/basic.xml
+
 	AssertWithinFinallyBlock
 	AssignmentInConditional
 	BigDecimalInstantiation
@@ -54,7 +55,23 @@ ruleset {
 	ForStatementBraces
 	IfStatementBraces
 	WhileStatementBraces
-
+	
+	// rulesets/grails.xml
+    GrailsDomainHasEquals{
+	enabled = false
+	} 
+    GrailsDomainHasToString{
+	enabled = false
+	}  
+    GrailsDuplicateConstraint 
+    GrailsDuplicateMapping 
+    GrailsPublicControllerMethod{
+	enabled = false
+	}  
+    GrailsServletContextReference 
+    GrailsSessionReference   // DEPRECATED
+    GrailsStatelessService 
+   
 	// rulesets/concurrency.xml
 	BusyWait
 	DoubleCheckedLocking

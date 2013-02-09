@@ -1,5 +1,5 @@
 codenarc{
-	ruleSetFiles = "file:grails-app/conf/CodeNarcRules.groovy"
+	ruleSetFiles = ["file:grails-app/conf/CodeNarcRules.groovy"]
 //    maxPriority2Violations = 1
 //    systemExitOnBuildException = true
 	reports = {

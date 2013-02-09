@@ -1,4 +1,4 @@
-<%@ page import="grails2.Book" %>
+<%@ page import="com.grails2.Book" %>
 <!doctype html>
 <html>
 <head>
